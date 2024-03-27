@@ -162,9 +162,9 @@ function updateCountdown() {
     var days = Math.floor(difference / (1000 * 60 * 60 * 24)); // Số ngày đã trôi qua
 
     var countdownElement = document.getElementById('countdown');
-    countdownElement.innerHTML = 'Ngày bắt đầu: ' + formatDateTime(startDate) + '<br>' +
-                                 'Ngày hiện tại: ' + formatDateTime(currentDate) + '<br>' +
-                                 'Chúng ta đã bám đít nhau được ' + days + ' ngày';
+    countdownElement.innerHTML = 'Ẹc ẹc: ' + formatDateTime(startDate) + '<br>' +
+                                 '...: ' + formatDateTime(currentDate) + '<br>' +
+                                 'Hehe ' + days + ' ngày';
 }
 
 function formatDateTime(dateTime) {
