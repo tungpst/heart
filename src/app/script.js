@@ -154,3 +154,33 @@ var s = document.readyState;
 if (s === 'complete' || s === 'loaded' || s === 'interactive') init();
 else document.addEventListener('DOMContentLoaded', init, false);
 
+var startDate = new Date('2021-11-19'); // Ngày bắt đầu mặc định
+
+function updateCountdown() {
+    var currentDate = new Date();
+    var difference = currentDate - startDate;
+    var days = Math.floor(difference / (1000 * 60 * 60 * 24)); // Số ngày đã trôi qua
+
+    var countdownElement = document.getElementById('countdown');
+    countdownElement.innerHTML = 'Ngày bắt đầu: ' + formatDateTime(startDate) + '<br>' +
+                                 'Ngày hiện tại: ' + formatDateTime(currentDate) + '<br>' +
+                                 'Chúng ta đã bám đít nhau được ' + days + ' ngày';
+}
+
+function formatDateTime(dateTime) {
+    var year = dateTime.getFullYear();
+    var month = padZero(dateTime.getMonth() + 1); // Tháng bắt đầu từ 0
+    var day = padZero(dateTime.getDate());
+    var hours = padZero(dateTime.getHours());
+    var minutes = padZero(dateTime.getMinutes());
+    var seconds = padZero(dateTime.getSeconds());
+
+    return year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+}
+
+function padZero(number) {
+    return (number < 10 ? '0' : '') + number;
+}
+
+// Gọi hàm updateCountdown mỗi giây
+setInterval(updateCountdown, 1000);
