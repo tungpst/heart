@@ -175,7 +175,7 @@ function formatDateTime(dateTime) {
     var minutes = padZero(dateTime.getMinutes());
     var seconds = padZero(dateTime.getSeconds());
 
-    return year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    return year + '-' + month + '-' + day ;
 }
 
 function padZero(number) {
